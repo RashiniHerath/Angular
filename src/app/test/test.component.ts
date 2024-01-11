@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-test',
-  templateUrl: './test.component.html',
-  styleUrl: './test.component.css'
+  template: '<div> Inline template </div>',
+  styles: ['div { color: red; }']
 })
 export class TestComponent {
 
