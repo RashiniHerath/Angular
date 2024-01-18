@@ -6,13 +6,12 @@ import { Component, OnInit } from '@angular/core';
     <h2>
       welcome {{ name }}
     </h2>
-    <input #myInput type="text">
-    <button (click)="logMessage(myInput.value)">Log</button>
+    <input [(ngModel)]="name" type="text">  
   `,
   styles: []
 })
 export class TestComponent implements OnInit {
-  public name = "Rashini";
+  public name: string = "Rashini"; 
 
   constructor() {}
 
