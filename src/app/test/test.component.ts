@@ -1,24 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { EventEmitter } from 'node:stream';
 
 @Component({
   selector: 'app-test',
   template: `
-    <div *ngFor="let color of colors; index as i">
-      <h2>{{i}}{{color}}</h2> 
-      <!-- each value of this will get rendered -->
-
-    </div>
+   <h2>{{"hello"+ name}}</h2>
+    <button (click)="fireEvent()">Send Event</button>
+   
   `,
   styles: []
 })
 export class TestComponent implements OnInit {
+fireEvent() {
+throw new Error('Method not implemented.');
+}
   
-  public colors=['red','blue','yellow']
-
-  public color = "green";
+  @Input('parentData') public name: any; //sent the data from the parent component to child
+  @Output() public childEvent=new EventEmitter();
 
   constructor() {}
 
   ngOnInit() {}
-
 }
+fireEvent(){
+    this.childEvent.emit("Hey Rashini");
+  }
+
+//by using event child components send data to the parent 
