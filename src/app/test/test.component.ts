@@ -5,6 +5,9 @@ import { EventEmitter } from 'node:stream';
   selector: 'app-test',
   template: `
     <h2>{{name}}</h2>
+    <h2>{{name | lowercase}}
+    <h2>{{name | uppercase}}
+    <h2>{{messaage | titlecase}}
   `,
   styles: []
 })
