@@ -4,26 +4,23 @@ import { EventEmitter } from 'node:stream';
 @Component({
   selector: 'app-test',
   template: `
-   <h2>{{"hello"+ name}}</h2>
-    <button (click)="fireEvent()">Send Event</button>
-   
+    <h2>{{name}}</h2>
   `,
   styles: []
 })
 export class TestComponent implements OnInit {
-fireEvent() {
-throw new Error('Method not implemented.');
-}
-  
-  @Input('parentData') public name: any; //sent the data from the parent component to child
-  @Output() public childEvent=new EventEmitter();
+
+  public name="Codevolution"
+  public messaage = "Welcome to Codevolution"
+  public person = {
+    "firstName": "John",
+    "lastName": "Doe"
+  }
 
   constructor() {}
 
   ngOnInit() {}
 }
-fireEvent(){
-    this.childEvent.emit("Hey Rashini");
-  }
 
-//by using event child components send data to the parent 
+
+//pipes are allowes to transform data before displaying the view
