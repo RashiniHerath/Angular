@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+// Remove the duplicate import statement for 'OnInit'
+// import { OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'employee-list',
@@ -12,15 +15,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeDetailsComponent implements OnInit {
   
+  // Declare the type of employees array
+  public employees: { id: number, name: string, age: number }[] = [];
 
-  public employees = [
-    { "id": 1, "name": "Andrew", "age": 30 },
-    { "id": 2, "name": "Brandon", "age": 25 },
-    { "id": 3, "name": "Christina", "age": 26 },
-    { "id": 4, "name": "Elena", "age": 28 }
-  ];
-constructor() { }
+  constructor(@Inject(EmployeeService) private _employeeService: EmployeeService) { }
 
   ngOnInit(): void {
+    this.employees = this._employeeService.getEmployees();
   }
 }

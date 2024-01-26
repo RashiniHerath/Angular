@@ -7,6 +7,7 @@ import { TestComponent } from './test/test.component';
 import { FormsModule } from '@angular/forms';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
+import { EmployeeService } from './employee.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import { EmployeeDetailsComponent } from './employee-details/employee-details.co
     FormsModule
   ],
   providers: [
+    EmployeeService,
     provideClientHydration()
+
   ],
   bootstrap: [AppComponent]
 })
