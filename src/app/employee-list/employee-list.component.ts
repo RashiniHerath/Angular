@@ -19,11 +19,11 @@ export class EmployeeListComponent implements OnInit {
 
   ngOnInit(): void {
   
-    this.employees = this._employeeService.getEmployees();
+    this._employeeService.getEmployees()
+    .subscribe(data => this.employees = data)
   }
 }
-
-//  in the employee.service class has get employees method that returns
-// the employee data. in the employee list Component it het hold of an instance of employee service which
-// is undescore employee service and call get employees method and design the returned the data to the employees
-//  arrya that belongs to the employee list component 
+// In here we have an instance of the employee service, we use this to all the getemployee methods
+//this returns an observable so to receive the data we need to subscribe to it.
+// once we subscribe to the observable the employee data arrives asynchronously.
+//we assign that data to class property using the fat arrow syntax
