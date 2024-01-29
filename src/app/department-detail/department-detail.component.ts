@@ -20,7 +20,7 @@ export class DepartmentDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    // Your initialization logic goes here
+   
   }
 
   goPrevious(): void {
@@ -51,3 +51,4 @@ export class DepartmentDetailComponent implements OnInit {
   }
 }
 
+// absolute paths (/)
