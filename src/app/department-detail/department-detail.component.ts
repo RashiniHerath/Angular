@@ -5,8 +5,15 @@ import { ActivatedRoute, Router } from '@angular/router';
   selector: 'app-department-detail',
   template: `
     <h3> You selected department with id = {{departmentId}}</h3>
-    <a (click)="goPrevious()">Previous</a>
-    <a (click)="goNext()">Next</a>
+    
+    <p>
+     <button>(click)="showOverview()"Overview</button>
+      <button>(click)=" showContact()"Contact</button>
+    </p>
+    
+    
+    <button (click)="goPrevious()">Previous</button>
+    <button (click)="goNext()">Next</button>
 
     <div>
       <button (click)="gotoDepartments()">Back</button>
